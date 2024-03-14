@@ -1,0 +1,705 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:engineering="http://example.com/engineering">
+
+    <!-- OWL Header Example -->
+    <owl:Ontology rdf:about="http://example.com/mechanicalengineering">
+        <dc:title>Mechanical engineering Ontology</dc:title>
+        <dc:description>An example ontology for mechanical engineering</dc:description>
+    </owl:Ontology>
+
+    <!-- Object Definitions-->
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#IsLinkedTo"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#involves"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#Considersin"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isusedin"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isusedin"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isappliedin"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isfollowedby"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isusedby"/>
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#aredefinedby"/>
+    
+
+    <!--the object property eng design incluence quality control-->
+    <owl:ObjectProperty rdf:about="http://example.org/influencesQualityControl"/>
+
+    <!-- Object Property: supports  // knowledge discovery supports the inspection process -->
+    <owl:ObjectProperty rdf:about="http://example.org/supportsInspectionProcess"/>
+
+    <!-- Object Property: utilizes  // engineering design utilizes knowledge discovery -->
+    <owl:ObjectProperty rdf:about="http://example.org/utilizesKnowledgeDiscovery"/>
+
+    <!-- Object Property: impacts  engineering design impacts thermal system engineering -->
+    <owl:ObjectProperty rdf:about="http://example.org/impactsThermalSystemEngineering"/>
+
+
+
+    <!-- Class Definition for "mechanicalEngineering" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#mechanicalEngineering">
+        <rdfs:label>Mechanical Engineering Aspects</rdfs:label>
+        <rdfs:comment>The class of some Mechanical Engineering Aspects</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subclass Definition for "Engineering Design" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#EngineeringDesign">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EngineeringDesign"/>
+        <rdfs:label>Engineering design aspect</rdfs:label>
+        <rdfs:comment>Aspect related to designing, simulating, and optimizing mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subclass Definition for "Knowledge Discovery" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+        <rdfs:label> Aspect Knowledge Discovery</rdfs:label>
+        <rdfs:comment>facilitate data integration, semantic search, and knowledge discovery in mechanical engineering</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subclass Definition for "Quality control" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#Qualitycontrol">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+        <rdfs:label> Aspect Quality control</rdfs:label>
+        <rdfs:comment>track quality parameters, inspection processes, and compliance with industry regulations</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subclass Definition for "Education and Training" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#EducationandTraining">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EducationandTraining"/>
+        <rdfs:label> Aspect Education and Training</rdfs:label>
+        <rdfs:comment> understanding of mechanical engineering concepts and best practices.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Subclass Definition for "Thermal Systems Engineering" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+        <rdfs:label> Aspect Thermal Systems Engineering</rdfs:label>
+        <rdfs:comment> designing efficient heating, ventilation, and air conditioning systems, simulating their performance.</rdfs:comment>
+    </owl:Class>
+
+    <!-- sub classes of eng design-->
+
+    <!-- Subclass Definitions for "Simulation," "Optimization," and "Designing Mechanical Systems" -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#Simulation">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EngineeringDesign"/>
+        <rdfs:label>Simulation aspect</rdfs:label>
+        <rdfs:comment>Aspect related to simulating mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#Optimization">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EngineeringDesign"/>
+        <rdfs:label>Optimization aspect</rdfs:label>
+        <rdfs:comment>Aspect related to optimizing mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#DesigningMechanicalSystems">
+        <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EngineeringDesign"/>
+        <rdfs:label>Designing Mechanical Systems aspect</rdfs:label>
+        <rdfs:comment>Aspect related to designing mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Object Property Definition for "IsLinkedTo" -->
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#IsLinkedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:label>Is Linked To</rdfs:label>
+        <rdfs:comment>Property indicating a link between different aspects of mechanical engineering.</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.example.com/MechanicalEngineering#Simulation"/>
+        <rdfs:range rdf:resource="http://www.example.com/MechanicalEngineering#EngineeringDesign"/>
+    </owl:ObjectProperty>
+
+    <!-- Object Property Definition for "Involves" -->
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#Involves">
+    <rdfs:label>Involves</rdfs:label>
+    <rdfs:comment>Indicates the involvement of one instance in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Object Property Definition for "considers" -->
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#Considers">
+    <rdfs:label>Considers</rdfs:label>
+    <rdfs:comment>Indicates that one concept considers another in the context of designing mechanical systems.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+
+        <!-- Subclass Definitions for data integration, sementic search and kniwledge discovery tecnique-->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#DataIntegration">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    <rdfs:label>Data Integration</rdfs:label>
+    <rdfs:comment>Subclass related to data integration in the context of knowledge discovery.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#SemanticSearch">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    <rdfs:label>Semantic Search</rdfs:label>
+    <rdfs:comment>Subclass related to semantic search in the context of knowledge discovery.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryTechnique">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    <rdfs:label>Knowledge Discovery Technique</rdfs:label>
+    <rdfs:comment>Subclass related to knowledge discovery techniques.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Object Property Definitions in knowledge discovery -->
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#UsedIn">
+    <rdfs:label>Used In</rdfs:label>
+    <rdfs:comment>Indicates that one concept is used in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#AppliedIn">
+    <rdfs:label>Applied In</rdfs:label>
+    <rdfs:comment>Indicates that one concept is applied in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+        <!-- Triples -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#DataIntegration">
+    <engineering:UsedIn rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#SemanticSearch">
+    <engineering:UsedIn rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryTechnique">
+    <engineering:AppliedIn rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscovery"/>
+    </rdf:Description>
+
+
+        <!-- Subclass Definitions in quality control -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#ComplianceTracking">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+    <rdfs:label>Compliance Tracking</rdfs:label>
+    <rdfs:comment>Subclass related to tracking compliance in the context of quality control.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#QualityParameters">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+    <rdfs:label>Quality Parameters</rdfs:label>
+    <rdfs:comment>Subclass related to quality parameters in the context of quality control.</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#InspectionProcess">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+    <rdfs:label> Inspection Process</rdfs:label>
+    <rdfs:comment>Subclass related to Inspection Process in the context of quality control.</rdfs:comment>
+    </owl:Class>
+
+
+
+        <!-- Object Property Definitions in quality controll -->
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#UsedBy">
+    <rdfs:label>Used By</rdfs:label>
+    <rdfs:comment>Indicates that one concept is used by another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#DefinedBy">
+    <rdfs:label>Defined By</rdfs:label>
+    <rdfs:comment>Indicates that one concept is defined by another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://example.com/MechanicalEngineering#isfollowedby">
+    <rdfs:label>Is Followed By</rdfs:label>
+    <rdfs:comment>Indicates that one process is followed by another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+        <!-- Triples for quality control -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#ComplianceTracking">
+    <engineering:UsedBy rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#QualityParameters">
+    <engineering:DefinedBy rdf:resource="http://www.example.com/MechanicalEngineering#Qualitycontrol"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#InspectionProcessInstance">
+    <engineering:isfollowedby rdf:resource="http://www.example.com/MechanicalEngineering#QualityControlInstance"/>
+    </rdf:Description>
+
+    <!-- Triple stating that "Simulation IsLinkedTo EngineeringDesign" -->
+    <rdf:Description rdf:about="http://example.com/MechanicalEngineering#SomeSimulationInstance">
+    <engineering:IsLinkedTo rdf:resource="http://example.com/MechanicalEngineering#SomeEngineeringDesignInstance"/>
+    </rdf:Description>
+
+    <!-- Triple stating that "optimization involves EngineeringDesign" -->
+    <rdf:Description rdf:about="http://example.com/MechanicalEngineering#SomeOptimizationInstance">
+    <engineering:Involves rdf:resource="http://example.com/MechanicalEngineering#SomeEngineeringDesignInstance"/>
+    </rdf:Description>
+
+    <!-- Triple stating that Designing mechanical Systems considers engineering design -->
+    <rdf:Description rdf:about="http://example.com/MechanicalEngineering#DesigningMechanicalSystems">
+    <engineering:Considers rdf:resource="http://example.com/MechanicalEngineering#EngineeringDesign"/>
+    </rdf:Description>
+
+
+     <!-- Subclass Definitions in education and training -->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#MechEngConceptsUnderstanding">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EducationandTraining"/>
+    <rdfs:label>Mechanical Engineering Concepts Understanding</rdfs:label>
+    <rdfs:comment>Subclass related to understanding mechanical engineering concepts in the context of education and training.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#BestPractices">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#EducationandTraining"/>
+    <rdfs:label>Best Practices</rdfs:label>
+    <rdfs:comment>Subclass related to best practices in the context of education and training.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Object Property Definitions in education and training -->
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#UsedIn">
+    <rdfs:label>Used In</rdfs:label>
+    <rdfs:comment>Indicates that one concept is used in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+        <!-- Triples in education and training -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#MechEngConceptsUnderstanding">
+    <engineering:UsedIn rdf:resource="http://www.example.com/MechanicalEngineering#EducationandTraining"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#BestPractices">
+    <engineering:UsedIn rdf:resource="http://www.example.com/MechanicalEngineering#EducationandTraining"/>
+    </rdf:Description>
+
+        <!-- Subclass Definitions in thermal system-->
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#EfficientHeatingDesign">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    <rdfs:label>Efficient Heating Design</rdfs:label>
+    <rdfs:comment>Subclass related to designing efficient heating in the context of thermal systems engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#EfficientVentilationDesign">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    <rdfs:label>Efficient Ventilation Design</rdfs:label>
+    <rdfs:comment>Subclass related to designing efficient ventilation in the context of thermal systems engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.example.com/MechanicalEngineering#EfficientACDesign">
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    <rdfs:label>Efficient Air Conditioning Design</rdfs:label>
+    <rdfs:comment>Subclass related to designing efficient air conditioning systems in the context of thermal systems engineering.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Object Property Definitions in thermal system -->
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#Involves">
+    <rdfs:label>Involves</rdfs:label>
+    <rdfs:comment>Indicates that one property involves another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#UsedIn">
+    <rdfs:label>Used In</rdfs:label>
+    <rdfs:comment>Indicates that one concept is used in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.com/MechanicalEngineering#AppliedIn">
+    <rdfs:label>Applied In</rdfs:label>
+    <rdfs:comment>Indicates that one concept is applied in another.</rdfs:comment>
+    </owl:ObjectProperty>
+
+        <!-- Triples in thermal system engineering -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EfficientHeatingDesign">
+    <engineering:Involves rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EfficientVentilationDesign">
+    <engineering:UsedIn rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EfficientACDesign">
+    <engineering:AppliedIn rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemsEngineering"/>
+    </rdf:Description>
+
+
+
+    <!-- to make the connection engineering design influence quality contraol  -->
+    <!-- Object Property Definition -->
+    <owl:ObjectProperty rdf:about="http://example.org/influencesQualityControl">
+    <rdfs:label>Influences Quality Control</rdfs:label>
+    <rdfs:comment>Indicates that engineering design influences quality control.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Triple to Express the Relationship -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EngineeringDesignInstance">
+    <engineering:InfluencesQualityControl rdf:resource="http://www.example.com/MechanicalEngineering#QualityControlInstance"/>
+    </rdf:Description>
+
+    <!--to make the connection knowledge discovery supports inspection processs-->
+    <!-- Object Property Definition -->
+    <owl:ObjectProperty rdf:about="http://example.org/supportsInspectionProcess">
+    <rdfs:label>Supports Inspection Process</rdfs:label>
+    <rdfs:comment>Indicates that Knowledge Discovery supports the Inspection Process.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Triple to Express the Relationship -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryInstance">
+    <engineering:supportsInspectionProcess rdf:resource="http://www.example.com/MechanicalEngineering#InspectionProcessInstance"/>
+    </rdf:Description>
+
+    <!--to make connections Engineering Design utilizes Knowledge Discovery -->
+
+    <!-- Object Property Definition -->
+    <owl:ObjectProperty rdf:about="http://example.org/utilizesKnowledgeDiscovery">
+    <rdfs:label>Utilizes Knowledge Discovery</rdfs:label>
+    <rdfs:comment>Indicates that Engineering Design utilizes Knowledge Discovery.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Triple to Express the Relationship -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EngineeringDesignInstance">
+    <engineering:utilizesKnowledgeDiscovery rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryInstance"/>
+    </rdf:Description>
+
+    <!--to make connection Engineering Design impacts Thermal System Engineering -->
+
+    <!-- Object Property Definition -->
+    <owl:ObjectProperty rdf:about="http://example.org/impactsThermalSystemEngineering">
+    <rdfs:label>Impacts Thermal System Engineering</rdfs:label>
+    <rdfs:comment>Indicates that Engineering Design impacts Thermal System Engineering.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <!-- Triple to Express the Relationship -->
+    <rdf:Description rdf:about="http://www.example.com/MechanicalEngineering#EngineeringDesignInstance">
+    <engineering:impactsThermalSystemEngineering rdf:resource="http://www.example.com/MechanicalEngineering#ThermalSystemEngineeringInstance"/>
+    </rdf:Description>
+
+
+    
+    <!-- defining the sub classes of simulation -->
+    
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#FiniteElementAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Simulation"/>
+    <rdfs:label>Finite Element Analysis (FEA)</rdfs:label>
+    <rdfs:comment>Deals with simulating and analyzing the behavior of structures and components under various conditions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ComputationalFluidDynamics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Simulation"/>
+    <rdfs:label>Computational Fluid Dynamics (CFD)</rdfs:label>
+    <rdfs:comment>Focuses on simulating fluid flow and heat transfer in mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MultibodyDynamics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Simulation"/>
+    <rdfs:label>Multibody Dynamics (MBD)</rdfs:label>
+    <rdfs:comment>Involves simulating the motion and interaction of interconnected rigid or flexible bodies.</rdfs:comment>
+    </owl:Class>
+
+    <!-- sub classes in optimization-->
+    
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#TopologyOptimization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Optimization"/>
+    <rdfs:label>Topology Optimization</rdfs:label>
+    <rdfs:comment>Involves optimizing the material distribution within a given design space to achieve the best structural performance.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ParametricOptimization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Optimization"/>
+    <rdfs:label>Parametric Optimization</rdfs:label>
+    <rdfs:comment>Focuses on optimizing design parameters to enhance performance while considering constraints.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MultiobjectiveOptimization">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Optimization"/>
+    <rdfs:label>Multi-objective Optimization</rdfs:label>
+    <rdfs:comment>Addresses the optimization of multiple conflicting objectives simultaneously in design processes.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define Sub-Classes of designing -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MechanismDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Designing"/>
+    <rdfs:label>Mechanism Design</rdfs:label>
+    <rdfs:comment>Concerned with designing the arrangement and interaction of mechanical components to achieve specific motions.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MachineDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Designing"/>
+    <rdfs:label>Machine Design</rdfs:label>
+    <rdfs:comment>Involves the creation of mechanical systems, such as engines, gears, and other machinery.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ProductDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#Designing"/>
+    <rdfs:label>Product Design</rdfs:label>
+    <rdfs:comment>Encompasses the overall design process, including aesthetics, functionality, and manufacturability of a mechanical product.</rdfs:comment>
+    </owl:Class>
+
+    <!-- ######################## define properties related to Knowledge Discovery ##################### -->
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#DatabaseIntegration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DataIntegration"/>
+    <rdfs:label>Database Integration</rdfs:label>
+    <rdfs:comment>Focuses on integrating data from multiple databases within the domain of mechanical engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#SensorDataIntegration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DataIntegration"/>
+    <rdfs:label>Sensor Data Integration</rdfs:label>
+    <rdfs:comment>Involves integrating data from sensors embedded in mechanical systems to improve overall understanding and decision-making.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#HistoricalDataIntegration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DataIntegration"/>
+    <rdfs:label>Historical Data Integration</rdfs:label>
+    <rdfs:comment>Concerned with integrating historical data to analyze trends and patterns in mechanical engineering processes.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define the SemanticSearch is used in property -->
+
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#OntologyBasedSearch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#SemanticSearch"/>
+    <rdfs:label>Ontology-Based Search</rdfs:label>
+    <rdfs:comment>Utilizes ontologies to enhance search results by considering semantic relationships between terms in mechanical engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ContextAwareSearch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#SemanticSearch"/>
+    <rdfs:label>Context-Aware Search</rdfs:label>
+    <rdfs:comment>Incorporates context information to improve the relevance and accuracy of search results.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MultimodalSearch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#SemanticSearch"/>
+    <rdfs:label>Multimodal Search</rdfs:label>
+    <rdfs:comment>Extends search capabilities to various data types, including text, images, and other modalities within the field of mechanical engineering.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define the KnowledgeDiscoveryTechnique is applied in property -->
+   
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MachineLearningAlgorithms">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryTechnique"/>
+    <rdfs:label>Machine Learning Algorithms</rdfs:label>
+    <rdfs:comment>Encompasses various machine learning techniques used for knowledge discovery, such as clustering, classification, and regression.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#DataMiningMethods">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryTechnique"/>
+    <rdfs:label>Data Mining Methods</rdfs:label>
+    <rdfs:comment>Includes techniques like association rule mining and clustering to discover patterns and relationships in mechanical engineering data.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#PredictiveModeling">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#KnowledgeDiscoveryTechnique"/>
+    <rdfs:label>Predictive Modeling</rdfs:label>
+    <rdfs:comment>Involves creating models that predict future behaviors or outcomes based on historical data in the mechanical engineering domain.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define the InspectionProcess is followed by property -->
+    
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#VisualInspection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#InspectionProcess"/>
+    <rdfs:label>Visual Inspection</rdfs:label>
+    <rdfs:comment>Involves the visual examination of mechanical components or products for defects or deviations from quality standards.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#NonDestructiveTesting">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#InspectionProcess"/>
+    <rdfs:label>Non-Destructive Testing (NDT)</rdfs:label>
+    <rdfs:comment>Utilizes methods such as ultrasonic testing, radiographic testing, and magnetic particle testing to assess the quality of materials without causing damage.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#DimensionalInspection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#InspectionProcess"/>
+    <rdfs:label>Dimensional Inspection</rdfs:label>
+    <rdfs:comment>Focuses on verifying the dimensional accuracy of mechanical components using precision measuring tools.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define the ComplianceTracking is used by property -->
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#RegulatoryComplianceTracking">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ComplianceTracking"/>
+    <rdfs:label>Regulatory Compliance Tracking</rdfs:label>
+    <rdfs:comment>Involves monitoring and ensuring adherence to industry standards, regulations, and compliance requirements in mechanical engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#InternalQualityStandardsTracking">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ComplianceTracking"/>
+    <rdfs:label>Internal Quality Standards Tracking</rdfs:label>
+    <rdfs:comment>Focuses on tracking compliance with internal quality standards and processes established by the organization.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#AuditTrail">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#ComplianceTracking"/>
+    <rdfs:label>Audit Trail</rdfs:label>
+    <rdfs:comment>Encompasses the systematic recording of activities and changes to ensure traceability and accountability in quality control processes.</rdfs:comment>
+    </owl:Class>
+
+    <!-- Define the Quality Parameters are defined by property -->
+    
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MaterialQualityParameters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#QualityParameters"/>
+    <rdfs:label>Material Quality Parameters</rdfs:label>
+    <rdfs:comment>Encompasses parameters related to the quality of materials used in mechanical engineering, such as tensile strength, hardness, and composition.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ProductPerformanceParameters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#QualityParameters"/>
+    <rdfs:label>Product Performance Parameters</rdfs:label>
+    <rdfs:comment>Includes parameters that measure the performance and functionality of mechanical products, such as efficiency, reliability, and durability.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ProcessQualityParameters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#QualityParameters"/>
+    <rdfs:label>Process Quality Parameters</rdfs:label>
+    <rdfs:comment>Focuses on parameters related to manufacturing and production processes, ensuring consistency and quality in the creation of mechanical components.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Define the includes understanding property -->
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ThermodynamicsKnowledge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#UnderstandingOfMechanicalEngineeringConcepts"/>
+    <rdfs:label>Thermodynamics Knowledge</rdfs:label>
+    <rdfs:comment>Focuses on understanding concepts related to heat, energy transfer, and thermodynamic cycles in mechanical systems.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#FluidMechanicsUnderstanding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#UnderstandingOfMechanicalEngineeringConcepts"/>
+    <rdfs:label>Fluid Mechanics Understanding</rdfs:label>
+    <rdfs:comment>Encompasses knowledge of fluid properties, flow behavior, and applications in mechanical engineering.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MaterialsScienceUnderstanding">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#UnderstandingOfMechanicalEngineeringConcepts"/>
+    <rdfs:label>Materials Science Understanding</rdfs:label>
+    <rdfs:comment>Involves knowledge of materials properties, selection criteria, and behavior under various conditions.</rdfs:comment>
+    </owl:Class>
+
+     <!-- Define the includes understanding property -->
+    
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#DesignBestPractices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#BestPractices"/>
+    <rdfs:label>Design Best Practices</rdfs:label>
+    <rdfs:comment>Encompasses guidelines and principles for effective and efficient mechanical system design.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ManufacturingBestPractices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#BestPractices"/>
+    <rdfs:label>Manufacturing Best Practices</rdfs:label>
+    <rdfs:comment>Involves recommended methods and processes for the efficient and high-quality manufacturing of mechanical components.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MaintenanceReliabilityBestPractices">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#BestPractices"/>
+    <rdfs:label>Maintenance and Reliability Best Practices</rdfs:label>
+    <rdfs:comment>Focuses on recommended practices for ensuring the reliability and longevity of mechanical systems through proper maintenance.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Define the involves designing efficient heating property -->
+    
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#RadiantHeatingSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientHeating"/>
+    <rdfs:label>Radiant Heating System Design</rdfs:label>
+    <rdfs:comment>Focuses on the design of heating systems that use radiant heat transfer for efficient and comfortable space heating.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#ForcedAirHeatingSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientHeating"/>
+    <rdfs:label>Forced Air Heating System Design</rdfs:label>
+    <rdfs:comment>Involves the design of forced-air heating systems, including considerations for ductwork, heat exchangers, and energy efficiency.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#GeothermalHeatingSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientHeating"/>
+    <rdfs:label>Geothermal Heating System Design</rdfs:label>
+    <rdfs:comment>Encompasses the design of heating systems that utilize geothermal energy for space heating.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Define the involves designing efficient ventilation property -->
+    
+
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#NaturalVentilationDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientVentilation"/>
+    <rdfs:label>Natural Ventilation Design</rdfs:label>
+    <rdfs:comment>Focuses on designing ventilation systems that leverage natural airflow for efficient air exchange.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#MechanicalVentilationSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientVentilation"/>
+    <rdfs:label>Mechanical Ventilation System Design</rdfs:label>
+    <rdfs:comment>Involves the design of mechanical ventilation systems, including considerations for energy recovery and air quality.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#CrossVentilationDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientVentilation"/>
+    <rdfs:label>Cross-Ventilation Design</rdfs:label>
+    <rdfs:comment>Encompasses strategies for designing spaces that promote effective cross-ventilation to enhance indoor air quality.</rdfs:comment>
+    </owl:Class>
+
+        <!-- Define the involves designing efficient air property -->
+    
+    <!-- Define Sub-Classes -->
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#VRFSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientAirConditioningSystems"/>
+    <rdfs:label>Variable Refrigerant Flow (VRF) System Design</rdfs:label>
+    <rdfs:comment>Focuses on the design of air conditioning systems that use VRF technology for energy-efficient temperature control.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#HighEfficiencyHVACSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientAirConditioningSystems"/>
+    <rdfs:label>High-Efficiency HVAC System Design</rdfs:label>
+    <rdfs:comment>Involves the design of HVAC systems with a focus on high efficiency, including the use of advanced controls and equipment.</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://example.com/MechanicalEngineering#SolarPoweredAirConditioningSystemDesign">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.example.com/MechanicalEngineering#DesigningEfficientAirConditioningSystems"/>
+    <rdfs:label>Solar-Powered Air Conditioning System Design</rdfs:label>
+    <rdfs:comment>Encompasses the design of air conditioning systems that utilize solar energy for cooling purposes.</rdfs:comment>
+    </owl:Class>
+
+
+</rdf:RDF>

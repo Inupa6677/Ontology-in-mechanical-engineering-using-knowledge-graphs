@@ -1,0 +1,87 @@
+1) What specific categories exist under the 'Optimization' class in the context of Mechanical Engineering
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subclass ?label ?comment
+WHERE {
+  ?subclass rdfs:subClassOf <http://www.example.com/MechanicalEngineering#Optimization> ;
+            rdfs:label ?label ;
+            rdfs:comment ?comment .
+}
+
+
+2) What are the specialized categories under the 'Simulation' class in the context of Mechanical Engineering
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subclass ?label ?comment
+WHERE {
+  ?subclass rdfs:subClassOf <http://www.example.com/MechanicalEngineering#Simulation> ;
+            rdfs:label ?label ;
+            rdfs:comment ?comment .
+}
+
+
+3)  Which particular categories fall under the Mechanical Engineering class "Inspection Process"?
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subclass ?label ?comment
+WHERE {
+  ?subclass rdfs:subClassOf <http://www.example.com/MechanicalEngineering#InspectionProcess> ;
+            rdfs:label ?label ;
+            rdfs:comment ?comment .
+}
+
+
+
+
+4) What are the specific aspects or techniques related to 'Designing Efficient Heating Property' in the field of Mechanical Engineering
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subclass ?label ?comment
+WHERE {
+  ?subclass rdfs:subClassOf <http://www.example.com/MechanicalEngineering#DesigningEfficientHeating> ;
+            rdfs:label ?label ;
+            rdfs:comment ?comment .
+}
+
+
+
+5) Which subclasses in the field of mechanical engineering are classified as "quality parameters"
+
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subclass ?label ?comment
+WHERE {
+  ?subclass rdfs:subClassOf <http://www.example.com/MechanicalEngineering#QualityParameters> ;
+            rdfs:label ?label ;
+            rdfs:comment ?comment .
+}
+
+
+6)  What precise relationship or link, as shown by the object property, unites the Mechanical Engineering classes "Simulation" and "Engineering Design"?
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?property ?comment
+WHERE {
+  ?property rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.example.com/MechanicalEngineering#Simulation> ;
+            rdfs:range <http://www.example.com/MechanicalEngineering#EngineeringDesign> ;
+            rdfs:label ?label .
+  OPTIONAL { ?property rdfs:comment ?comment }
+}
+
+
+7) 
